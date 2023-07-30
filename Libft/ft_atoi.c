@@ -1,18 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 00:04:50 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/16 21:04:36 by ialzein          ###   ########.fr       */
+/*   Created: 2023/07/25 03:38:50 by ialzein           #+#    #+#             */
+/*   Updated: 2023/07/25 04:04:05 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha (int a)
+int ft_atoi(const char *str)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	j = 0;
+	i = 0;
+	k = 1;
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
 	{
-	return ((a >= 'A' && a <= 'Z') || ( a >= 'a' && a <= 'z'));
+		i++;
 	}
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			k *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		j = (j * 10) + (str[i] - 48);
+		i++;
+	}
+	return (j * k);
+}

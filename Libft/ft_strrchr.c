@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 00:04:50 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/16 21:04:36 by ialzein          ###   ########.fr       */
+/*   Created: 2023/07/17 23:22:06 by ialzein           #+#    #+#             */
+/*   Updated: 2023/07/20 00:21:38 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha (int a)
+char* ft_strrchr (const char *b, int a)
+{
+	int	i;
+
+	i = 0;
+	while (b[i])
+		i++;
+	while (i >= 0)
 	{
-	return ((a >= 'A' && a <= 'Z') || ( a >= 'a' && a <= 'z'));
+		if (b[i] == (char)a)
+			return ((char*)(b + i));
+		i--;
 	}
+	return (NULL);
+}

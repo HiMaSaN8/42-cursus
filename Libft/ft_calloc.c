@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 00:04:50 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/16 21:04:36 by ialzein          ###   ########.fr       */
+/*   Created: 2023/07/26 03:04:26 by ialzein           #+#    #+#             */
+/*   Updated: 2023/07/28 03:27:06 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha (int a)
+void *ft_calloc(size_t nmemb, size_t size)
+{
+	if (size == 0 && nmemb * size > SIZE_MAX ) 
+		return NULL;
+	void* ptr = malloc(nmemb * size);
+	if(ptr != NULL)
 	{
-	return ((a >= 'A' && a <= 'Z') || ( a >= 'a' && a <= 'z'));
+		ft_memset(ptr, 0, nmemb * size);
 	}
+	return ptr;
+}

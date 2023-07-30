@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 00:04:50 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/16 21:04:36 by ialzein          ###   ########.fr       */
+/*   Created: 2023/07/24 03:43:08 by ialzein           #+#    #+#             */
+/*   Updated: 2023/07/25 03:37:25 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int ft_isalpha (int a)
+char *ft_strnstr(const char *haystack, const char *needle, size_t len) {
+   	size_t	i;
+	size_t	j;
+	
+	if (!needle[0])
+		return ((char*)haystack);
+	
+	if (len == 0)
+		return (NULL);
+	
+	i = 0;
+	while (haystack[i] && i < len)
 	{
-	return ((a >= 'A' && a <= 'Z') || ( a >= 'a' && a <= 'z'));
+		j = 0;
+		while (haystack[i] && needle[j] &&
+				i < len && haystack[i] == needle[j])
+			j++;
+		if (!needle[j])
+			return ((char*)(haystack + i));
+		i++;
 	}
+	return (NULL);
+}

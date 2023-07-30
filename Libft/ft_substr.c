@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 00:04:50 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/16 21:04:36 by ialzein          ###   ########.fr       */
+/*   Created: 2023/07/28 22:05:27 by ialzein           #+#    #+#             */
+/*   Updated: 2023/07/28 22:33:42 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int ft_isalpha (int a)
+char *ft_substr(char const *s, unsigned int start, size_t len)
+{
+	if(s == NULL || start < 0 || len < 0)
+		return NULL;
+	if(start > ft_strlen(s))
+		return ft_strdup("");
+	if(start + len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	char* out;
+	out = (char*)malloc(sizeof(*s) * (len + 1));
+	if(out != NULL)
 	{
-	return ((a >= 'A' && a <= 'Z') || ( a >= 'a' && a <= 'z'));
+		ft_strlcpy(out, s + start, len + 1);
+		out[len] = '\0';
 	}
+	return out;
+}
