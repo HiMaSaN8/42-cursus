@@ -6,12 +6,13 @@
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 21:36:55 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/17 23:12:05 by ialzein          ###   ########.fr       */
+/*   Updated: 2023/08/15 20:47:30 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-size_t			ft_strlcpy(char * dest, const char * src, size_t size)
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t	size)
 {
 	size_t	i;
 	size_t	j;
