@@ -6,36 +6,35 @@
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 03:38:50 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/25 04:04:05 by ialzein          ###   ########.fr       */
+/*   Updated: 2023/08/20 05:49:37 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int	i;
-	int	j;
-	int	k;
+	int	a;
+	int	b;
+	int	neg;
 
-	j = 0;
-	i = 0;
-	k = 1;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+	b = 0;
+	a = 0;
+	while ((str[a] >= 9 && str[a] <= 13) || str[a] == ' ')
+		a++;
+	if (str[a] == '+' || str[a] == '-')
 	{
-		i++;
+		if (str[a] == '-')
+			neg = 1;
+		a++;
 	}
-	while (str[i] == '-' || str[i] == '+')
+	while (ft_isdigit(str[a]))
 	{
-		if (str[i] == '-')
-			k *= -1;
-		i++;
+		b = b * 10 + (str[a] - 48);
+		a++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		j = (j * 10) + (str[i] - 48);
-		i++;
-	}
-	return (j * k);
+	if (neg == 1)
+		return (b * -1);
+	else
+		return (b);
 }

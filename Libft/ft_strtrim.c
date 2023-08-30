@@ -6,11 +6,12 @@
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 02:30:09 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/31 02:56:40 by ialzein          ###   ########.fr       */
+/*   Updated: 2023/08/18 01:31:13 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;

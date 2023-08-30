@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 23:16:20 by ialzein           #+#    #+#             */
-/*   Updated: 2023/08/20 03:10:55 by ialzein          ###   ########.fr       */
+/*   Created: 2023/08/25 05:40:08 by ialzein           #+#    #+#             */
+/*   Updated: 2023/08/25 06:12:46 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *a, size_t b)
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned char	*c;
+	t_list	*counter;
 
-	c = a;
-	while (b)
-	{
-		*c++ = 0;
-		--b;
-	}
+	if (!lst)
+		return (0);
+	counter = lst;
+	while (counter -> next != NULL)
+		counter = counter->next;
+	return (counter);
 }

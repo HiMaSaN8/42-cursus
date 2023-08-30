@@ -6,13 +6,13 @@
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 00:04:50 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/16 21:04:36 by ialzein          ###   ########.fr       */
+/*   Updated: 2023/08/20 03:13:24 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha (int a)
-	{
-	return ((a >= 'A' && a <= 'Z') || ( a >= 'a' && a <= 'z'));
-	}
+int	ft_isalpha(int a)
+{
+	return ((a >= 'A' && a <= 'Z') || (a >= 'a' && a <= 'z'));
+}

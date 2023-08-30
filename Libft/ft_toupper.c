@@ -6,20 +6,20 @@
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 23:29:22 by ialzein           #+#    #+#             */
-/*   Updated: 2023/07/15 23:40:30 by ialzein          ###   ########.fr       */
+/*   Updated: 2023/08/18 19:34:38 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int a)
+int	ft_toupper(int a)
 {
 	if (a > 96 && a < 123)
 	{
-		return(a - 32);
+		return (a - 32);
 	}
 	else 
 	{
-		return(a);
+		return (a);
 	}
 }

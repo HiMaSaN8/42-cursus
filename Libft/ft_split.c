@@ -6,13 +6,13 @@
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 02:53:45 by ialzein           #+#    #+#             */
-/*   Updated: 2023/08/15 02:38:50 by ialzein          ###   ########.fr       */
+/*   Updated: 2023/08/29 03:22:45 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countword(const char *s, char c)
+static int	countword(const char *s, char c)
 {
 	int	a;
 	int	d;
@@ -33,7 +33,7 @@ int	countword(const char *s, char c)
 	return (d);
 }
 
-char	*wordassign(const char *s, int len)
+static char	*wordassign(const char *s, int len)
 {
 	char	*s2;
 
