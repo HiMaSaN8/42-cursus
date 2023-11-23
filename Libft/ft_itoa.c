@@ -6,7 +6,7 @@
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 05:49:33 by ialzein           #+#    #+#             */
-/*   Updated: 2023/08/29 03:32:15 by ialzein          ###   ########.fr       */
+/*   Updated: 2023/11/23 09:10:50 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_itoa(int n)
 {
 	int		negative;
 	int		i;
-	char	*result; 
+	char	*result;
 
 	negative = isnegative(n);
 	if (n == -2147483648)

@@ -6,7 +6,7 @@
 /*   By: ialzein <ialzein@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 23:29:22 by ialzein           #+#    #+#             */
-/*   Updated: 2023/08/18 19:34:38 by ialzein          ###   ########.fr       */
+/*   Updated: 2023/11/23 08:53:23 by ialzein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,5 @@ int	ft_toupper(int a)
 	{
 		return (a - 32);
 	}
-	else 
-	{
-		return (a);
-	}
+	return (a);
 }
